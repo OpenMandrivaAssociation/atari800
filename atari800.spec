@@ -1,6 +1,6 @@
 Name:			atari800
 Version:		2.2.1
-Release:		%mkrel 1
+Release:		%mkrel 2
 
 Summary:	Atari 800 Emulator
 License:	GPLv2+
@@ -8,6 +8,7 @@ Group:		Emulators
 Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}.tar.gz
 Source1:	%{name}-chooser
 URL:		http://atari800.atari.org/
+Patch0:		atari800-wahcade-keylayout.patch
 
 BuildRequires:	SDL-devel
 BuildRequires:	XFree86-devel
@@ -78,6 +79,7 @@ support.
 %prep
 %setup -q -n atari800-%{version}
 find ./src -type f -name "*.[chi]*" -exec chmod 644 '{}' +
+%patch0
 
 %build
 cd src
