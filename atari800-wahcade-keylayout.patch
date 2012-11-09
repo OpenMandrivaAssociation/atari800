@@ -1,0 +1,129 @@
+--- src/sdl/input.c	2011-04-28 07:44:06.000000000 -0400
++++ src/sdl/input.c	2012-01-26 00:40:28.000000000 -0500
+@@ -413,7 +413,9 @@
+ 				SDL_WM_GrabInput(grab_mouse ? SDL_GRAB_ON : SDL_GRAB_OFF);
+ 				key_pressed = 0;
+ 				break;
+-			case SDLK_1:
++/* meins; remove standard functions for key 1 and 2		
++
++				case SDLK_1:
+ 				key_pressed = 0;
+ 				if (Atari800_tv_mode == Atari800_TV_NTSC) {
+ 					if (kbhits[SDLK_LSHIFT]) {
+@@ -436,7 +438,9 @@
+ 						Colours_setup->saturation += 0.02;
+ 				}
+ 				Colours_Update();
+-				break;
++				break; 
++*/
++
+ 			case SDLK_3:
+ 				key_pressed = 0;
+ 				if (kbhits[SDLK_LSHIFT]) {
+@@ -595,7 +599,10 @@
+ 		INPUT_key_consol &= (~INPUT_CONSOL_OPTION);
+ 	if (kbhits[SDLK_F3])
+ 		INPUT_key_consol &= (~INPUT_CONSOL_SELECT);
+-	if (kbhits[SDLK_F4])
++
++/* meins; set key 1 for start */
++
++	if (kbhits[SDLK_1])
+ 		INPUT_key_consol &= (~INPUT_CONSOL_START);
+ 
+ 	if (key_pressed == 0)
+@@ -606,13 +613,14 @@
+ 	case SDLK_F1:
+ 		key_pressed = 0;
+ 		return AKEY_UI;
++
+ 	case SDLK_F5:
+ 		key_pressed = 0;
+ 		return INPUT_key_shift ? AKEY_COLDSTART : AKEY_WARMSTART;
+ 	case SDLK_F8:
+ 		UI_alt_function = UI_MENU_MONITOR;
+ 		break;
+-	case SDLK_F9:
++	case SDLK_ESCAPE:
+ 		return AKEY_EXIT;
+ 	case SDLK_F10:
+ 		key_pressed = 0;
+@@ -650,19 +658,24 @@
+ 		shiftctrl ^= AKEY_SHFT;
+ 
+ 	if (Atari800_machine_type == Atari800_MACHINE_5200 && !UI_is_active) {
+-		if (lastkey == SDLK_F4)
++		if (lastkey == SDLK_1)
+ 			return AKEY_5200_START ^ shiftctrl;
+ 		switch (lastuni) {
+-		case 'p':
++
++/* meins,  2 (Mame P2 Button 2 ) as Option */
++		case 's':
+ 			return AKEY_5200_PAUSE ^ shiftctrl;
++
++/* meins, 
+ 		case 'r':
+-			return AKEY_5200_RESET ^ shiftctrl;
++			return AKEY_5200_RESET ^ shiftctrl; */
++
+ 		case '0':
+ 			return AKEY_5200_0 ^ shiftctrl;
+ 		case '1':
+ 			return AKEY_5200_1 ^ shiftctrl;
+-		case '2':
+-			return AKEY_5200_2 ^ shiftctrl;
++/* meins		case '2':
++			return AKEY_5200_2 ^ shiftctrl; */
+ 		case '3':
+ 			return AKEY_5200_3 ^ shiftctrl;
+ 		case '4':
+@@ -680,8 +693,19 @@
+ 		case '#':
+ 		case '=':
+ 			return AKEY_5200_HASH ^ shiftctrl;
++
++/* meins,  2 (Mame 2 player button ) as Option */
++
++		case '2':
++			return AKEY_5200_HASH ^ shiftctrl;
+ 		case '*':
+ 			return AKEY_5200_ASTERISK ^ shiftctrl;
++
++/* meins, space (Mame P1 button 2) as Option */
++
++		case ' ':
++			return AKEY_5200_ASTERISK ^ shiftctrl; 
++
+ 		}
+ 		return AKEY_NONE;
+ 	}
+@@ -720,8 +744,8 @@
+ 		return AKEY_SPACE ^ shiftctrl;
+ 	case SDLK_BACKSPACE:
+ 		return AKEY_BACKSPACE|shiftctrl;
+-	case SDLK_RETURN:
+-		return AKEY_RETURN ^ shiftctrl;
++	case SDLK_LCTRL:                                             /* meins gut, mame P1 Button 1 ;return, Return */
++		return AKEY_RETURN ^ shiftctrl;     /* meins gut, mame P1 Button 1, return, Return */
+ 	case SDLK_LEFT:
+ 		return (INPUT_key_shift ? AKEY_PLUS : AKEY_LEFT) ^ shiftctrl;
+ 	case SDLK_RIGHT:
+@@ -832,10 +856,13 @@
+ 			return AKEY_ESCAPE|shiftctrl;
+ 		case SDLK_0:
+ 			return AKEY_CTRL_0|shiftctrl;
+-		case SDLK_1:
++
++/* meins; remove standard functions for key 1 and 2	
++	
++                case SDLK_1:  
+ 			return AKEY_CTRL_1|shiftctrl;
+ 		case SDLK_2:
+-			return AKEY_CTRL_2|shiftctrl;
++			return AKEY_CTRL_2|shiftctrl;  */
+ 		case SDLK_3:
+ 			return AKEY_CTRL_3|shiftctrl;
+ 		case SDLK_4:
