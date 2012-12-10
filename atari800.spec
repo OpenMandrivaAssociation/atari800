@@ -131,3 +131,29 @@ rm -rf %{buildroot}
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/atari800-ncurses
 
+
+
+%changelog
+* Fri Jan 27 2012 Zombie Ryushu <ryushu@mandriva.org> 2.2.1-2mdv2011.0
++ Revision: 769468
+- Wahcade patch
+
+* Fri Jul 29 2011 Andrey Bondrov <abondrov@mandriva.org> 2.2.1-1
++ Revision: 692170
+- imported package atari800
+
+
+* Mon Jul 18 2011 Andrey Bondrov <bondrov@math.dvgu.ru> 2.2.1-1mdv2011.0
+- New version
+- Port from PLF
+- Remove PLF reference
+
+* Sun Apr 19 2009 Guillaume Bedot <littletux@zarb.org> 2.1.0-1plf2009.1
+- New release
+- svgalib version is no more, ncurses version replaces it for use without X
+- renamed SDL version to atari800-sdl
+- updated chooser script
+- fixed buildreqs
+
+* Wed Jan  7 2009 Guillaume Bedot <littletux@zarb.org> 2.0.3-1plf2009.1
+- First atari800 package for PLF, inspired by the one from Zombie Ryushu

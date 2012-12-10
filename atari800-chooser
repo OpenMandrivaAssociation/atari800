@@ -1,0 +1,28 @@
+#!/bin/sh
+
+if [ -n "$DISPLAY" ]; then
+  if [ -x /usr/bin/atari800-x11 ] ; then
+    exec /usr/bin/atari800-x11
+  elif [ -x /usr/bin/atari800-sdl ] ; then
+    exec /usr/bin/atari800-sdl
+  elif [ -x /usr/bin/atari800-ncurses ] ; then
+    echo "atari800-x11 and atari800-sdl not found, trying atari800-ncurses..."
+    exec /usr/bin/atari800-ncurses
+  else
+    echo "Cannot run Atari800 - executable not found."
+    echo "Install atari800-x11, atari800-sdl or atari800-ncurses package."
+  fi
+else
+  if [ -x /usr/bin/atari800-ncurses ] ; then
+    exec /usr/bin/atari800-ncurses
+  else
+    if [ -x /usr/bin/atari800-x11 -o -x /usr/bin/atari800-sdl ] ; then
+      echo "Cannot run Atari800 - DISPLAY not found."
+      echo "atari800-x11 and atari800-sdl need X-server running and DISPLAY variable set."
+      echo "Install atari800-ncurses package for use without X."
+    else
+      echo "Cannot run Atari800 - executable not found."
+      echo "Install atari800-x11, atari800-sdl or atari800-ncurses package."
+    fi
+  fi
+fi
