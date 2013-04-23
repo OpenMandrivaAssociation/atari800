@@ -8,9 +8,11 @@ Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}.tar.gz
 Source1:	%{name}-chooser
 Url:		http://atari800.atari.org/
 Patch0:		atari800-wahcade-keylayout.patch
-BuildRequires:	pkgconfig(sdl)
-BuildRequires:	pkgconfig(zlib)
+BuildRequires:	pkgconfig(libpng)
 BuildRequires:	pkgconfig(ncurses)
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(zlib)
 
 %description
 This is Atari 800, 800XL, 130XE and 5200 emulator.
