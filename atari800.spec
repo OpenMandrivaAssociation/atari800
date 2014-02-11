@@ -1,7 +1,7 @@
 Summary:	Atari 800 Emulator
 Name:		atari800
 Version:	3.0.0
-Release:	3
+Release:	4
 License:	GPLv2+
 Group:		Emulators
 Url:		http://atari800.atari.org/
@@ -171,7 +171,7 @@ Comment=An emulator of 8-bit Atari personal computers.
 Comment[ru]=Эмулятор 8-bit компьютера Atari
 Icon=%{name}
 Exec=%{name}
-Categories=System;Emulator;
+Categories=Game;Emulator;
 EOF
 
 # Install icons of various sizes
