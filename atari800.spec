@@ -14,7 +14,6 @@ Source5:	ATARIOSB.ROM
 Source6:	ATARIXL.ROM
 Patch0:		atari800-3.0.0-cfg.patch
 BuildRequires:	librsvg
-BuildRequires:	termcap-devel
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(sdl)
