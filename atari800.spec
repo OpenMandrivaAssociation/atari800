@@ -1,7 +1,7 @@
 Summary:	Atari 800 Emulator
 Name:		atari800
 Version:	3.0.0
-Release:	4
+Release:	5
 License:	GPLv2+
 Group:		Emulators
 Url:		http://atari800.atari.org/
