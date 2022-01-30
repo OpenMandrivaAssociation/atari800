@@ -1,18 +1,18 @@
 Summary:	Atari 800 Emulator
 Name:		atari800
-Version:	3.0.0
-Release:	5
+Version:	4.1.0
+Release:	1
 License:	GPLv2+
 Group:		Emulators
 Url:		http://atari800.atari.org/
-Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}-scr.tgz
 Source1:	%{name}-chooser
 Source2:	ATARI5200.ROM
 Source3:	ATARIBAS.ROM
 Source4:	ATARIOSA.ROM
 Source5:	ATARIOSB.ROM
 Source6:	ATARIXL.ROM
-Patch0:		atari800-3.0.0-cfg.patch
+#Patch0:		atari800-3.0.0-cfg.patch
 BuildRequires:	librsvg
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(ncurses)
