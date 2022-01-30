@@ -5,7 +5,7 @@ Release:	1
 License:	GPLv2+
 Group:		Emulators
 Url:		http://atari800.atari.org/
-Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}-scr.tgz
+Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}-src.tgz
 Source1:	%{name}-chooser
 Source2:	ATARI5200.ROM
 Source3:	ATARIBAS.ROM
