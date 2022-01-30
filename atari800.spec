@@ -18,6 +18,7 @@ BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(ncurses)
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(zlib)
+BuildRequires:  pkgconfig(xext)
 
 %description
 This is Atari 800, 800XL, 130XE and 5200 emulator.
