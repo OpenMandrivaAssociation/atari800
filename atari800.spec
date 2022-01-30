@@ -127,7 +127,7 @@ autoconf
 
 %configure --target=default --with-video=sdl --with-sound=sdl
 %make
-mv -f atari800 atari800-sdl
+#mv -f atari800 atari800-sdl
 make clean
 
 %configure --target=shm
