@@ -1,11 +1,13 @@
 Summary:	Atari 800 Emulator
 Name:		atari800
-Version:	4.1.0
+Version:	4.2.0
 Release:	1
 License:	GPLv2+
 Group:		Emulators
 Url:		http://atari800.atari.org/
-Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}-src.tgz
+Source0:    https://github.com/atari800/atari800/releases/download/ATARI800_4_2_0/atari800-%{version}-src.tgz
+# OLD sources
+#Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}-src.tgz
 Source1:	%{name}-chooser
 Source2:	ATARI5200.ROM
 Source3:	ATARIBAS.ROM
@@ -120,7 +122,6 @@ support.
 %prep
 %setup -q
 find ./src -type f -name "*.[chi]*" -exec chmod 644 '{}' +
-#patch0 -p1
 
 %build
 aclocal
@@ -128,17 +129,6 @@ autoconf
 
 %configure --target=default --with-video=sdl --with-sound=sdl
 %make
-#mv -f atari800 atari800-sdl
-make clean
-
-%configure --target=shm
-%make
-mv -f atari800 atari800-x11
-make clean
-
-%configure --target=default --with-video=ncurses
-%make
-mv -f atari800 atari800-ncurses
 
 %install
 mkdir -p %{buildroot}%{_bindir}
