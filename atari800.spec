@@ -119,7 +119,7 @@ support.
 %prep
 %setup -q
 find ./src -type f -name "*.[chi]*" -exec chmod 644 '{}' +
-%patch0 -p1
+#patch0 -p1
 
 %build
 cd src
