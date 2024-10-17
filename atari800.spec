@@ -4,7 +4,7 @@ Version:	3.0.0
 Release:	5
 License:	GPLv2+
 Group:		Emulators
-Url:		http://atari800.atari.org/
+Url:		https://atari800.atari.org/
 Source0:	http://downloads.sourceforge.net/atari800/atari800-%{version}.tar.gz
 Source1:	%{name}-chooser
 Source2:	ATARI5200.ROM
