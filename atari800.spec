@@ -13,6 +13,11 @@ Source4:	ATARIOSA.ROM
 Source5:	ATARIOSB.ROM
 Source6:	ATARIXL.ROM
 Patch0:		atari800-3.0.0-cfg.patch
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	librsvg
 BuildRequires:	pkgconfig(gl)
 BuildRequires:	pkgconfig(ncurses)
